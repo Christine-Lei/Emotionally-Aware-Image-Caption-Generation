@@ -29,10 +29,6 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 - **Visual Processing**: Series of convolutional layers with adaptive average pooling.
 - **Fusion and Output**: Concatenation of text and image features, followed by fully connected layers and a sigmoid-activated output layer.
 
-## Training
-- **Optimizer**: Adam with a learning rate of 0.01.
-- **Loss Function**: Binary cross-entropy with logits, ideal for multilabel classification.
-
 ## Fine-tuning
 The student model, pre-trained on COCO, is fine-tuned on the Scoratis dataset to enhance its specificity in emotion recognition by leveraging learned features from a large-scale generic dataset.
 
