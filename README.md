@@ -8,6 +8,7 @@ This project aims to study emotion recognition through transfer learning, employ
 - COCO dataset: raw data imported into code from the huggging face API. The dataset containing the noisy predictions, `coco_predictions.csv`, was too large to upload to github.
 - Scoratis dataset: cleaned version contained in [`cleaned_data.csv`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/cleaned_data.csv). Images are too big to upload.
 
+## Methodology
 
 ## Preprocessing
 - **Images**: For the Teacher Model, we employ Fast R-CNN for visual feature extraction; for the Student Model, we use simpler resizing and transforming techniques.
