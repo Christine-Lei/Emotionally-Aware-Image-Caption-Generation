@@ -32,6 +32,7 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 ## Fine-tuning
 - ['FineTuning AnB+.ipynb'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/FineTuning_AnB+.ipynb) 
 - ['FineTuning.ipynb'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/FineTuning.ipynb)
+
 The student model, pre-trained on COCO, is fine-tuned on the Scoratis dataset to enhance its specificity in emotion recognition by leveraging learned features from a large-scale generic dataset.
 
 ## Results and Discussion
