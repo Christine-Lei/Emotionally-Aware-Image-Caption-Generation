@@ -6,7 +6,7 @@ This project aims to study emotion recognition through transfer learning, employ
 
 ## Datasets
 - COCO dataset: raw data imported into code from the huggging face API. The dataset containing the noisy predictions, `coco_predictions.csv`, was too large to upload to github.
-- Scoratis dataset: cleaned version contained in ['cleaned_data.csv'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/cleaned_data.csv). Images are too big to upload.
+- Scoratis dataset: cleaned version contained in [`cleaned_data.csv`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/cleaned_data.csv). Images are too big to upload.
 
 
 ## Preprocessing
@@ -16,10 +16,11 @@ This project aims to study emotion recognition through transfer learning, employ
 ## Model Architecture
 ### Teacher Model
 - [`Socratis_Teacher_Model.ipynb`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/Socratis_Teacher_Model.ipynb)
-- **Core**: We used the pretrained VisualBERT model, designed for handling both textual and visual inputs; followed by a fully connected linear layer to map the high-dimensional pooled outputs to our emotion classes.
+- **Architecrure**: We used the pretrained VisualBERT model, designed for handling both textual and visual inputs; followed by a fully connected linear layer to map the high-dimensional pooled outputs to our emotion classes.
+-  The trained teacher model was used to infer emotion probabilities for the COCO dataset, the code is located in the file [`COCO Prediction + Sampling.ipynb`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/COCO%20Prediction%20%2B%20Sampling.ipynb).
 
 ### Student Model
-- 'studentModel.ipynb'
+- [`studentModel.ipynb`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/studentModel.ipynb)
 - **Text Processing**: Embedding layer utilizing BERT's pretrained embeddings and a GRU layer.
 - **Visual Processing**: Series of convolutional layers with adaptive average pooling.
 - **Fusion and Output**: Concatenation of text and image features, followed by fully connected layers and a sigmoid-activated output layer.
@@ -28,13 +29,8 @@ This project aims to study emotion recognition through transfer learning, employ
 - **Optimizer**: Adam with a learning rate of 0.01.
 - **Loss Function**: Binary cross-entropy with logits, ideal for multilabel classification.
 
-## Predictions on COCO
-- 'COCO Prediction + Sampling.ipynb'
-Using the trained teacher model to infer emotion probabilities for the COCO dataset, setting thresholds to refine and focus on predominant emotions per image.
-
 ## Fine-tuning
 The student model, pre-trained on COCO, is fine-tuned on the Scoratis dataset to enhance its specificity in emotion recognition by leveraging learned features from a large-scale generic dataset.
-
 
 ## Results and Discussion
 Detailed analysis of model performance, including accuracy metrics and discussions on the effectiveness of the teacher-student model architecture in multimodal emotion recognition.
