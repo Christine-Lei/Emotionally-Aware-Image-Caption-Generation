@@ -10,14 +10,13 @@ This project aims to study emotion recognition through transfer learning, employ
 
 
 ## Preprocessing
-- **Images**: Employ Fast R-CNN for visual feature extraction.
-- **Text**: Utilize BERT tokenizer for generating necessary input structures for the model.
+- **Images**: For the Teacher Model, we employ Fast R-CNN for visual feature extraction; for the Student Model, we use simpler resizing and transforming techniques.
+- **Text**: We use the pretrained BERT Tokenizer to tokenize the captions.
 
 ## Model Architecture
 ### Teacher Model
-- 'Socratis_Teacher_Model.ipynb'
-- **Core**: VisualBERT, designed for handling both textual and visual inputs.
-- **Output**: Fully connected layer to map high-dimensional pooled outputs to emotion classes.
+- [`Socratis_Teacher_Model.ipynb`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/Socratis_Teacher_Model.ipynb)
+- **Core**: We used the pretrained VisualBERT model, designed for handling both textual and visual inputs; followed by a fully connected linear layer to map the high-dimensional pooled outputs to our emotion classes.
 
 ### Student Model
 - 'studentModel.ipynb'
