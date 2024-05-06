@@ -2,13 +2,12 @@
 Authors: Tomisin Adeyemi, Christine Lei, and MinJoo Kim
 
 ## Overview
-This project explores emotion recognition from image-caption pairs using a multimodal teacher-student model architecture. We leverage the Scoratis dataset, which consists of 2075 images with 12489 interpretations per image, identifying predominant emotions such as happiness, sadness, and curiosity. By utilizing pretrained models for initial feature extraction and employing VisualBERT for integration and prediction, we aim to accurately classify emotional contexts from complex multimodal inputs.
+This project aims to study emotion recognition through transfer learning, employing the student-teacher model architecture. We utilize the Scoratis dataset, comprising 2075 unique images and 12489 total data points, as our target dataset and the basis for our Teacher Model. Each image is annotated with captions and emotions. Notably, repeated images exhibit varying emotions across subject annotations. We utilize the popular COCO Dataset, comprising of over 100k+ image-caption pairs, as our source dataset and the basis for the Student Model. The goal of this project is to generate emotions on the COCO dataset based on our trained teacher model. Ultimately, after augmenting the COCO dataset with emotions and building student and teacher models, we experiment with different techniques for finetuning.
 
-## Dataset
-- COCO dataset
-- Scoratis dataset (cleaned version: 'cleaned_data.csv')
-- 'coco_predictions.csv'
-The Scoratis dataset includes a diverse range of emotions with detailed annotations. We preprocess the dataset by filtering emotions occurring over 100 times, reducing dimensionality to 29 significant emotions, and applying one-hot encoding for model compatibility. Additionally, the COCO dataset was used for further training using generated emotion predictions as proxy labels.
+## Datasets
+- COCO dataset: raw data imported into code from the huggging face API. The dataset containing the noisy predictions, `coco_predictions.csv`, was too large to upload to github.
+- Scoratis dataset: cleaned version contained in ['cleaned_data.csv'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/cleaned_data.csv). Images are too big to upload.
+
 
 ## Preprocessing
 - **Images**: Employ Fast R-CNN for visual feature extraction.
