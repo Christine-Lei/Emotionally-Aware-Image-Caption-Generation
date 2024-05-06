@@ -11,25 +11,8 @@ This project aims to study emotion recognition through transfer learning, employ
 ## Methodology
 ![Model Sketch](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/3cf2db35-6b0a-49b4-b089-e596a0a8239e) 
 
-Step 1. Teacher model training:  
+Inspired by Yalnize et Al, we employ a student-teacher architecture for the transfer learning process. We first train a teacher model on the target dataset, make predictions on the source using the teacher model, resulting in a new dataset. We then pretrain a student model on the new dataset, then finetune it for better predictions. The main reason for adopting this approach is that our target dataset is a lot smaller than the source, so transferability is perfect for our task. The image below summarizes our training approach.
 
-The teacher model is trained on the Socratis dataset, and consists of a VisualBERT layer followed by a fully connected layer. Since VisualBERT takes in image embeddings rather than raw embeddings, we use a pre-trained Fast R-CNN to extract the needed image embeddings and variables. We use a fully connected layer after the VisualBERT layer to map the high-dimensional pooled output from VisualBERT to a lower-dimensional space corresponding to the number of emotions. 
-
-Step 2. COCO prediction and sampling:
-
-We used the teacher model to create to make emotion predictions on COCO. We decided on p = 4, since the average number of emotions per image in Scoratis is 3.98. 
-
-Step 3. Pre-training Student model: 
-
-1. Randomly sample 10% of the data from our dataset, since it is simply too big (118,287rows) and
-2. Change to a simpler student model. For the text processing component is the embedding layer that uses a vocabulary size matching BERT's base model. Following the embeddings, the model employs a GRU with 256 hidden units to process the sequence of words. On the visual side, the model processes images through a sequence of convolutional layers that increase in complexity. These layers extract a hierarchy of features from the images, starting from basic edges and textures to more complex patterns, by using 3x3 kernels and stride settings that gradually reduce the spatial dimensions. An adaptive average pooling layer then condenses these features into a consistent size output, setting the stage for merging with the text data. The fusion of text and image features is straightforward: the model concatenates these features into a single vector. Following the fusion, the model uses fully connected layers, including a ReLU-activated layer, to further process the combined features and map them to the final output. The output layer, activated by a sigmoid function, where each label is determined independently.
-   
-Step 4. Fine Tuning:
-
-Given our source dataset COCO (A), which includes COCO and the labeled dataset from our teacher model prediction, and target dataset, Socratis (B), we will experiment with 2 fine tuning approaches. In both cases, initialize the parameters of the teacher model (B) with the pre-trained weights of the student model (A).
-AnB: finetuning but keeping all the layers frozen
-AnB+: finetuning but not freezing the layers
- 
 ## Preprocessing
 - **Images**: For the Teacher Model, we employ Fast R-CNN for visual feature extraction; for the Student Model, we use simpler resizing and transforming techniques.
 - **Text**: We use the pretrained BERT Tokenizer to tokenize the captions.
