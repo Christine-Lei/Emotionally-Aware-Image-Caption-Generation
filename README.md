@@ -10,8 +10,6 @@ This project aims to study emotion recognition through transfer learning, employ
 
 ## Methodology
 ![Model Sketch](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/3cf2db35-6b0a-49b4-b089-e596a0a8239e)
-
-Data preprocessing: We started by preprocessing the Socratis dataset, which contains 2075 unique images and approximately 12k data points total (many images were repeated with different emotions each time). However, given that there were around 983 unique emotions, some of which were empty or did not seem to be emotions at all, we cleaned the dataset by only keeping emotions that appeared more than 100 times in the data. This reduced the total number of unique emotions from 983 to 29. Lastly, the images were one-hot encoded for easy model interpretation. For the COCO Dataset, not much preprocessing on the original data was needed as it had already been preprocessed.
 Step 1. Teacher model training:  
 The teacher model is trained on the Socratis dataset, and consists of a VisualBERT layer followed by a fully connected layer. Since VisualBERT takes in image embeddings rather than raw embeddings, we use a pre-trained Fast R-CNN to extract the needed image embeddings and variables. We use a fully connected layer after the VisualBERT layer to map the high-dimensional pooled output from VisualBERT to a lower-dimensional space corresponding to the number of emotions. 
 Step 2. COCO prediction and sampling:
