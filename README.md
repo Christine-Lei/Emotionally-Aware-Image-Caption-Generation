@@ -34,7 +34,7 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 The layers of the trained student model (A) are transferred to the layers of the teacher model (B). And we experiment with two finetuning techniques: AnB & AnB+, where AnB involves freezing all the layers and AnB+ involves not freezing the layers.
 
 ## Results and Discussion
-Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are are visible in our Milestone 3 Document.
+Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are are visible in our [Milestone 3 Document](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ADS%20Project_%20Milestone%203.pdf).
 
 ## Reference 
 Inspired by [Socratis: Are large multimodal models emotionally aware?](https://arxiv.org/abs/2308.16741), [How transferable are features in deep neural
