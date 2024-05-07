@@ -34,8 +34,9 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 The layers of the trained student model (A) are transferred to the layers of the teacher model (B). And we experiment with two finetuning techniques: AnB & AnB+, where AnB involves freezing all the layers and AnB+ involves not freezing the layers.
 
 ## Results and Discussion
-Detailed analysis of model performance, including accuracy metrics and discussions on the effectiveness of the teacher-student model architecture in multimodal emotion recognition.
+Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are shown below:
+
 
 ## Reference 
-inspired by [Socratis: Are large multimodal models emotionally aware?](https://arxiv.org/abs/2308.16741), [How transferable are features in deep neural
+Inspired by [Socratis: Are large multimodal models emotionally aware?](https://arxiv.org/abs/2308.16741), [How transferable are features in deep neural
 networks?](https://proceedings.neurips.cc/paper_files/paper/2014/file/375c71349b295fbe2dcdca9206f20a06-Paper.pdf), and [Billion-scale semi-supervised learning for image classification](https://arxiv.org/abs/1905.00546)
