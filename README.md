@@ -38,7 +38,7 @@ The layers of the trained student model (A) are transferred to the layers of the
 ## Results and Discussion
 Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are shown below:
 ![anb vs anb+ loss](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/anb%20vs%20anbp%20loss.png) 
-![metrics]([https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/3cf2db35-6b0a-49b4-b089-e596a0a8239e](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ab%20abp%20metrics.png)) 
+![metrics](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/3cf2db35-6b0a-49b4-b089-e596a0a8239e](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ab%20abp%20metrics.png) 
 
 
 ## Reference 
