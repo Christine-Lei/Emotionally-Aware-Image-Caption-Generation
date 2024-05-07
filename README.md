@@ -30,10 +30,8 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 - **Fusion and Output**: Concatenation of text and image features, followed by fully connected layers and a sigmoid-activated output layer.
 
 ## Fine-tuning
-- ['FineTuning AnB+.ipynb'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/FineTuning_AnB+.ipynb) 
-- ['FineTuning.ipynb'](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/FineTuning.ipynb)
-
-The student model, pre-trained on COCO, is fine-tuned on the Scoratis dataset to enhance its specificity in emotion recognition by leveraging learned features from a large-scale generic dataset.
+- [`FineTuning.ipynb`](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/FineTuning.ipynb)
+The layers of the trained student model (A) are transferred to the layers of the teacher model (B). And we experiment with two finetuning techniques: AnB & AnB+, where AnB involves freezing all the layers and AnB+ involves not freezing the layers.
 
 ## Results and Discussion
 Detailed analysis of model performance, including accuracy metrics and discussions on the effectiveness of the teacher-student model architecture in multimodal emotion recognition.
