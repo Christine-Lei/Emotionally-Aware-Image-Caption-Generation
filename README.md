@@ -1,6 +1,8 @@
 # Emotionally-Aware-Image-Caption-Generation
 Authors: Tomisin Adeyemi, Christine Lei, and MinJoo Kim
 
+Link to our [Milestone 3 Document](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ADS%20Project_%20Milestone%203.pdf).
+
 ## Overview
 This project aims to study emotion recognition through transfer learning, employing the student-teacher model architecture. We utilize the Scoratis dataset, comprising 2075 unique images and 12489 total data points, as our target dataset and the basis for our Teacher Model. Each image is annotated with captions and emotions. Notably, repeated images exhibit varying emotions across subject annotations. We utilize the popular COCO Dataset, comprising of over 100k+ image-caption pairs, as our source dataset and the basis for the Student Model. The goal of this project is to generate emotions on the COCO dataset based on our trained teacher model. Ultimately, after augmenting the COCO dataset with emotions and building student and teacher models, we experiment with different techniques for finetuning.
 
@@ -34,7 +36,10 @@ Inspired by Yalnize et Al, we employ a student-teacher architecture for the tran
 The layers of the trained student model (A) are transferred to the layers of the teacher model (B). And we experiment with two finetuning techniques: AnB & AnB+, where AnB involves freezing all the layers and AnB+ involves not freezing the layers.
 
 ## Results and Discussion
-Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are are visible in our [Milestone 3 Document](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ADS%20Project_%20Milestone%203.pdf).
+Although the AnB architecture has a better convergence than the AnB+ architecture, the AnB+ architecture performs better across all metrics we tested. The plots of the training loss as well as the metrics are shown below:
+![anb vs anb+ loss](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/anb%20vs%20anbp%20loss.png) 
+![metrics]([https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/3cf2db35-6b0a-49b4-b089-e596a0a8239e](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ab%20abp%20metrics.png)) 
+
 
 ## Reference 
 Inspired by [Socratis: Are large multimodal models emotionally aware?](https://arxiv.org/abs/2308.16741), [How transferable are features in deep neural
