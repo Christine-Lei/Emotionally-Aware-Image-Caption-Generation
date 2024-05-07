@@ -12,7 +12,7 @@ This project aims to study emotion recognition through transfer learning, employ
 
 ## Methodology
 
-![Model Sketch](![Model Sketch (2)](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/b0536138-c2d0-44e6-88e4-ab3dfcc490f2)) 
+![Model Sketch](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/assets/98556351/b0536138-c2d0-44e6-88e4-ab3dfcc490f2)
 
 Inspired by Yalnize et Al, we employ a student-teacher architecture for the transfer learning process. We first train a teacher model on the target dataset, make predictions on the source using the teacher model, resulting in a new dataset. We then pretrain a student model on the new dataset, then finetune it for better predictions. The main reason for adopting this approach is that our target dataset is a lot smaller than the source, so transferability is perfect for our task. The image below summarizes our training approach.
 
