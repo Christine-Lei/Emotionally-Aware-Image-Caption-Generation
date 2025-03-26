@@ -41,6 +41,7 @@ Although the AnB architecture has a better convergence than the AnB+ architectur
 ![anb vs anb+ loss](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/anb%20vs%20anbp%20loss.png) 
 ![metrics](https://github.com/Christine-Lei/Emotionally-Aware-Image-Caption-Generation/blob/main/ab%20abp%20metrics.png ) 
 
+<!-- For portfolio purposes only -->
 
 ## Reference 
 Inspired by [Socratis: Are large multimodal models emotionally aware?](https://arxiv.org/abs/2308.16741), [How transferable are features in deep neural
